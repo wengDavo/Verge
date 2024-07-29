@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <article class="relative py-12 px-4 grid gap-7 md:gap-36 border border-grey-15 bg-grey-8 text-abs-white md:flex">
+    <article class="relative py-12 px-4 grid gap-7 md:gap-36 border border-y-grey-15 border-x-grey-8 bg-grey-8 text-abs-white md:flex">
       <div class="z-10 ">
         <h3 class="font-semibold text-[28px] ">
           Start Your Real Estate Journey Today

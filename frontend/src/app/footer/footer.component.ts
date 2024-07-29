@@ -6,7 +6,7 @@ import { OverviewComponent } from '../overview/overview.component';
   standalone: true,
   imports: [CtaComponent, OverviewComponent],
   template: `
-    <section class="grid gap-4 ">
+    <section class="grid gap-4">
       <app-cta />
       <app-overview />
     </section>

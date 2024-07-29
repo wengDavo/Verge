@@ -33,8 +33,8 @@ import { FooterComponent } from '../footer/footer.component';
       <app-steps-section />
       <app-teams-section/>
       <app-client-section/>
-      <app-footer />
     </section>
+    <app-footer />
   `,
   styles: ``,
 })

@@ -1,20 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { SectionTitleComponent } from '../section-title/section-title.component';
-import { AbsractDesignSparklesComponent } from '../absract-design-sparkles/absract-design-sparkles.component';
 import { TeamCardComponent } from '../team-card/team-card.component';
 import { teamCardI } from '../team-card/team-card.interface';
 
 @Component({
   selector: 'app-teams-section',
   standalone: true,
-  imports: [
-    SectionTitleComponent,
-    AbsractDesignSparklesComponent,
-    TeamCardComponent,
-  ],
+  imports: [SectionTitleComponent, TeamCardComponent],
   template: `
     <section class="grid gap-8">
-      <app-absract-design-sparkles />
       <app-section-title [title]="title" [description]="description" />
       <div class="md:grid md: grid-cols-3 md:gap-2">
         @for (item of teamsData; track $index) {

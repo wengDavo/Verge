@@ -2,17 +2,18 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { OverviewCardComponent } from '../overview-card/overview-card.component';
 import { overviewCardI } from '../overview-card/overview-card.interface';
 import { appName } from '../app.config';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-overview',
   standalone: true,
-  imports: [OverviewCardComponent],
+  imports: [OverviewCardComponent, MatIconModule],
   template: `
     <section class="grid gap-6">
-      <article class="">
+      <article class="p-2">
         <figure class="flex gap-2">
           <img src="assets/icons/logo.svg" alt="" class="w-6" />
-          <figcaption>{{app_name}}</figcaption>
+          <figcaption>{{ app_name }}</figcaption>
         </figure>
         <div class="grid grid-cols-2 md:flex md:justify-between">
           @for (item of overviewCardData; track $index) {
@@ -20,9 +21,20 @@ import { appName } from '../app.config';
           }
         </div>
       </article>
-      <article class="text-center dark:bg-grey-10 text-abs-black bg-white-90 py-5 grid gap-2 dark:text-abs-white">
-        <p>Terms & Conditions</p>
-        <p>{{year}} {{app_name}}. All Rights Reserved.</p>
+      <article
+        class="text-center dark:bg-grey-10 text-abs-black bg-white-90 py-5 grid gap-4 dark:text-abs-white md:flex md:justify-between md:p-4 md:items-center md:flex-row-reverse"
+      >
+      
+        <div class="flex gap-4 mx-auto md:mx-0">
+          <p class="bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>emoji_nature</mat-icon></p>
+          <p class="bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>compost</mat-icon></p>
+          <p class="bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>diamond</mat-icon></p>
+          <p class="bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>spa</mat-icon></p>
+        </div>
+        <div class="md:flex md:gap-4">
+          <p>Terms & Conditions</p>
+          <p>{{ year }} {{ app_name }} All Rights Reserved.</p>
+        </div>
       </article>
     </section>
   `,
@@ -31,9 +43,9 @@ import { appName } from '../app.config';
 export class OverviewComponent implements OnInit {
   overviewCardData!: Array<overviewCardI>;
   date: Date = new Date();
-  year: number = this.date.getFullYear()
+  year: number = this.date.getFullYear();
 
-  constructor(@Inject(appName) public app_name: string){
+  constructor(@Inject(appName) public app_name: string) {
     this.app_name = app_name;
   }
   ngOnInit(): void {
