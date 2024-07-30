@@ -26,7 +26,7 @@ import { NgStyle } from '@angular/common';
       />
       <article class="relative overflow-hidden">
         <div
-          class="flex transition-transform duration-500 ease-in-out "
+          class="grid md:grid-cols-3 gap-2"
           [ngStyle]="moveSlide()"
         >
           @for (item of faqsData; track $index) {
