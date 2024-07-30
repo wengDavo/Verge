@@ -26,8 +26,8 @@ import { FooterComponent } from '../footer/footer.component';
       <app-featured-properties />
       <app-testimonials />
       <app-faqs />
-      <app-footer />
     </section>
+    <app-footer />
   `,
   styles: ``,
 })

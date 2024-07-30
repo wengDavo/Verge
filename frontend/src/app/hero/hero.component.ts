@@ -1,13 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { HeroCardComponent } from '../hero-card/hero-card.component';
-import { heroCardI } from '../hero-card/hero-card.interface';
+import { HeroCardsComponent } from '../hero-cards/hero-cards.component';
 import { appName } from '../app.config';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [MatIconModule, HeroCardComponent],
+  imports: [MatIconModule, HeroCardsComponent],
   template: `
     <section class="grid gap-4">
       <article class="relative md:flex md:gap-2 md:flex-row-reverse">
@@ -73,13 +72,7 @@ import { appName } from '../app.config';
           </div>
         </div>
       </article>
-      <article
-        class="bg-white-95 dark:bg-grey-8 rounded-[12px] shadow-sm dark:shadow-md grid grid-cols-2 gap-3 shadow-grey-8 p-2 outline outline-white-90 dark:outline-grey-15 text-abs-white md:grid-cols-4 md:rounded-none"
-      >
-        @for (item of heroCardData; track $index) {
-        <app-hero-card [message]="item.message" [imagePath]="item.imagePath" />
-        }
-      </article>
+      <app-hero-cards />
     </section>
   `,
   styles: ``,
@@ -88,22 +81,4 @@ export class HeroComponent {
   constructor(@Inject(appName) public app_name: string) {
     this.app_name = app_name;
   }
-  heroCardData: Array<heroCardI> = [
-    {
-      message: 'Find Your Dream Home at Verge',
-      imagePath: '/assets/icons/home.svg',
-    },
-    {
-      message: 'Unlock Property Value With Us',
-      imagePath: '/assets/icons/camera.svg',
-    },
-    {
-      message: 'Effortlesly Property Management',
-      imagePath: '/assets/icons/corperation.svg',
-    },
-    {
-      message: 'Smart Investments, Informed Decisions',
-      imagePath: '/assets/icons/sun.svg',
-    },
-  ];
 }
