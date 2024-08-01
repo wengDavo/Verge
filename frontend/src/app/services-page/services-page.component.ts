@@ -5,7 +5,6 @@ import { HeroCardsComponent } from '../hero-cards/hero-cards.component';
 import { UnlockSectionComponent } from '../unlock-section/unlock-section.component';
 import { unlockSectionI } from '../unlock-section/unlock-section.interface';
 import { UnlockSectionService } from '../unlock-section/unlock-section.service';
-
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({

@@ -7,7 +7,7 @@ import { unlockPanelI } from './unlock-panel.interface';
   imports: [],
   template: `
     <div
-      class="bg-grey-10 border border-grey-15 rounded-md p-6 gap-5 background-abstarct md:col-span-3"
+      class="bg-grey-10 border border-grey-15 rounded-md p-6 gap-5 background-abstract md:col-span-3"
     >
       <p class="font-bold text-xl">{{ data.title }}</p>
       <button class="bg-grey-8 rounded-lg px-5 py-3 border border-grey-15">
@@ -19,7 +19,7 @@ import { unlockPanelI } from './unlock-panel.interface';
     </div>
   `,
   styles: `
-    .background-abstarct{
+    .background-abstract{
       background-image: url("/assets/images/unlockAbstractDesign.svg");
       }
     

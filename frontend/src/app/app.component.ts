@@ -7,6 +7,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { PropertiesPageComponent } from './properties-page/properties-page.component';
 import { PropertyDetailPageComponent } from './property-detail-page/property-detail-page.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { ServicesPageComponent } from './services-page/services-page.component';
     AboutPageComponent,
     PropertiesPageComponent,
     PropertyDetailPageComponent,
-    ServicesPageComponent
+    ServicesPageComponent,
+    ContactPageComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
