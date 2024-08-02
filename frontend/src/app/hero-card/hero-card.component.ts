@@ -7,11 +7,11 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatIconModule],
   template: `
     <div
-      class="bg-white-90 dark:bg-grey-10 text-center px-5 py-6 rounded-[10px] grid gap-4 dark:border-grey-20 border md:p-2 text-abs-black dark:text-abs-white"
+      class="bg-white-90 dark:bg-grey-10 text-center px-5 py-6 rounded-[10px] grid gap-4 dark:border-grey-20 border md:p-2 text-abs-black dark:text-abs-white border-white-95"
     >
       <figure class="rounded-[10px] flex justify-center items-center relative">
         <div
-          class="bg-grey-8 p-2 rounded-full outline border-purple-75 border outline-grey-8"
+          class="bg-white-85 dark:bg-grey-8 p-2 rounded-full outline border-purple-75 border dark:outline-grey-8 outline-white-85"
         >
           <img [src]="imagePath" alt="" />
         </div>

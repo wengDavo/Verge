@@ -26,10 +26,10 @@ import { MatIconModule } from '@angular/material/icon';
       >
       
         <div class="flex gap-4 mx-auto md:mx-0">
-          <p class="bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>emoji_nature</mat-icon></p>
-          <p class="bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>compost</mat-icon></p>
-          <p class="bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>diamond</mat-icon></p>
-          <p class="bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>spa</mat-icon></p>
+          <p class="bg-white-95 dark:bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>emoji_nature</mat-icon></p>
+          <p class="bg-white-95 dark:bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>compost</mat-icon></p>
+          <p class="bg-white-95 dark:bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>diamond</mat-icon></p>
+          <p class="bg-white-95 dark:bg-grey-8 p-2 rounded-full grid place-content-center"><mat-icon>spa</mat-icon></p>
         </div>
         <div class="md:flex md:gap-4">
           <p>Terms & Conditions</p>

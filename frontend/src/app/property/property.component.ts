@@ -7,14 +7,14 @@ import { propertyI } from './property.interface';
   standalone: true,
   imports: [MatIconModule],
   template: `
-    <article class="border border-white-90 dark:border-grey-20 p-6 grid gap-6 rounded-xl md:mr-1">
-      <figure class="w-[310px] h-[210px]">
+    <article class="border border-white-85 dark:border-grey-20 p-6 grid gap-6 rounded-xl md:mr-1">
+      <figure class="w-[310px] h-[210px] mx-auto">
         <img [src]="propertyData.img" alt="" class="w-full h-full rounded-xl" />
       </figure>
       <article class="grid gap-6">
         <div>
           <h4 class="font-semibold text-[18px]">{{ propertyData.name }}</h4>
-          <p class="font-medium text-sm text-grey-60">
+          <p class="font-medium text-sm dark:text-grey-60 text-grey-30">
             {{ propertyData.description }}
             <span class="text-abs-white">Read More</span>
           </p>

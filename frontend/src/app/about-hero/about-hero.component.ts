@@ -36,13 +36,13 @@ import { AbsractDesignSparklesComponent } from '../absract-design-sparkles/absra
               class="text-center md:text-left grid grid-cols-2 gap-2 md:grid-cols-3"
             >
               <div
-                class="p-4 md:px-2 md:w md:py-0 dark:bg-grey-10 grid gap-[2px] md:gap-2 rounded-lg border dark:border-grey-15 md:place-content-center text-abs-dark dark:text-abs-white bg-white-95 border-white-90"
+                class="p-4 md:px-2 md:w md:py-0 dark:bg-grey-10 grid gap-[2px] md:gap-2 rounded-lg border dark:border-grey-15 md:place-content-center text-abs-dark dark:text-abs-white bg-white-90 border-white-95"
               >
                 <p class="font-bold text-2xl">200+</p>
                 <p class="font-medium text-xs text-grey-60">Happy Customers</p>
               </div>
               <div
-                class="p-4 md:px-2 md:w md:py-0 dark:bg-grey-10 grid gap-[2px] md:gap-2 rounded-lg border dark:border-grey-15 md:place-content-center text-abs-dark dark:text-abs-white bg-white-95 border-white-90"
+                class="p-4 md:px-2 md:w md:py-0 dark:bg-grey-10 grid gap-[2px] md:gap-2 rounded-lg border dark:border-grey-15 md:place-content-center text-abs-dark dark:text-abs-white bg-white-90 border-white-95"
               >
                 <p class="font-bold text-2xl">10k+</p>
                 <p class="font-medium text-xs text-grey-60">
@@ -50,7 +50,7 @@ import { AbsractDesignSparklesComponent } from '../absract-design-sparkles/absra
                 </p>
               </div>
               <div
-                class="p-4 md:px-2 md:w md:py-0 grid gap-[2px] md:gap-2 dark:bg-grey-10 rounded-lg col-span-2 md:col-span-1 border dark:border-grey-15 md:place-content-center text-abs-dark dark:text-abs-white bg-white-95 border-white-90"
+                class="p-4 md:px-2 md:w md:py-0 grid gap-[2px] md:gap-2 dark:bg-grey-10 rounded-lg col-span-2 md:col-span-1 border dark:border-grey-15 md:place-content-center text-abs-dark dark:text-abs-white bg-white-90 border-white-95"
               >
                 <p class="font-bold text-2xl">16+</p>
                 <p class="font-medium text-xs text-grey-60">

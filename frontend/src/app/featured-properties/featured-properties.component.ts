@@ -34,17 +34,17 @@ import { NgStyle } from '@angular/common';
         [description]="description"
         [category]="category"
       />
-      <article class="relative overflow-hidden">
+      <article class="grid gap-2">
         <div
-          class="flex transition-transform duration-500 ease-in-out "
+          class="grid gap-2 md:grid-cols-3"
           [ngStyle]="moveSlide()"
         >
           @for (item of propertiesData; track $index) {
           <app-property [propertyData]="item" />
           }
         </div>
+        <app-pagination-navigation (prev)="prev($event)" (next)="next($event)" />
       </article>
-      <app-pagination-navigation (prev)="prev($event)" (next)="next($event)" />
     </section>
   `,
   styles: ``,

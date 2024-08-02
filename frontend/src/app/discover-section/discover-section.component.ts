@@ -7,22 +7,32 @@ import { discoverCardI } from '../discover-card/discover-card.interface';
 @Component({
   selector: 'app-discover-section',
   standalone: true,
-  imports: [SectionTitleComponent, DiscoverCardComponent, ExploreSectionComponent],
+  imports: [
+    SectionTitleComponent,
+    DiscoverCardComponent,
+    ExploreSectionComponent,
+  ],
   template: `
     <section class="grid gap-8">
       <app-section-title [title]="title" [description]="description" />
       <article
-        class="rounded-md p-3 bg-grey-10 border border-grey-15 flex gap-2 md:w-fit "
+        class="rounded-md p-3 dark:bg-grey-10 bg-white-90 border dark:border-grey-15 border-white-95 flex gap-2 md:w-fit "
       >
-        <p class="rounded-md px-5 py-3 hover:bg-grey-8 border border-grey-15">
+        <button
+          class="rounded-md px-5  py-3 dark:hover:bg-grey-8 bg-white-95 dark:bg-grey-10  hover:bg-white-85 border dark:border-grey-15 border-white-95"
+        >
           All
-        </p>
-        <p class="rounded-md px-5 py-3 hover:bg-grey-8 border border-grey-15">
+        </button>
+        <button
+          class="rounded-md px-5  py-3 dark:hover:bg-grey-8 bg-white-95 dark:bg-grey-10 hover:bg-white-85 border dark:border-grey-15 border-white-95"
+        >
           Regional
-        </p>
-        <p class="rounded-md px-5 py-3 hover:bg-grey-8 border border-grey-15">
+        </button>
+        <button
+          class="rounded-md px-5  py-3 dark:hover:bg-grey-8 bg-white-95 dark:bg-grey-10 hover:bg-white-85 border dark:border-grey-15 border-white-95"
+        >
           International
-        </p>
+        </button>
       </article>
       <article class="grid gap-2 md:grid-cols-2">
         @for (item of discoverCardData; track $index) {

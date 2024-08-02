@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
   template: `
     <form
       action=""
-      class="border border-grey-15 bg-grey-10 p-5 space-y-5 rounded-[6px] "
+      class="border dark:border-grey-15 border-white-95 dark:bg-grey-10 bg-white-90 p-5 space-y-5 rounded-[6px] "
     >
       <fieldset class="grid md:grid-cols-2 gap-4">
         <div class="grid gap-2">
@@ -18,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
             name=""
             id=""
             placeholder="Enter First Name"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 dark:placeholder:text-grey-40 placeholder:text-grey-60 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97"
           />
         </div>
         <div class="grid gap-2">
@@ -28,7 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
             name=""
             id=""
             placeholder="Enter Last Name"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 dark:placeholder:text-grey-40 placeholder:text-grey-60 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97"
           />
         </div>
       </fieldset>
@@ -40,7 +40,7 @@ import { MatIconModule } from '@angular/material/icon';
             name=""
             id=""
             placeholder="Enter Your Email"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 dark:placeholder:text-grey-40 placeholder:text-grey-60 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97"
           />
         </div>
         <div class="grid gap-2">
@@ -50,7 +50,7 @@ import { MatIconModule } from '@angular/material/icon';
             name=""
             id=""
             placeholder="Enter Phone Number"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 dark:placeholder:text-grey-40 placeholder:text-grey-60 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97"
           />
         </div>
       </fieldset>
@@ -64,7 +64,7 @@ import { MatIconModule } from '@angular/material/icon';
           name=""
           id=""
           placeholder="Enter Your Number"
-          class="rounded-md px-2 py-4  placeholder:text-grey-40 bg-grey-15 border border-grey-20 w-full mt-2"
+          class="rounded-md px-2 py-4  dark:placeholder:text-grey-40 placeholder:text-grey-60 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97 w-full mt-2"
           [value]="propertyName"
           disabled
         />
@@ -75,7 +75,7 @@ import { MatIconModule } from '@angular/material/icon';
           name=""
           id=""
           placeholder="Enter Your Message Here"
-          class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40 resize-none"
+          class="rounded-md px-5 py-4 dark:placeholder:text-grey-40 placeholder:text-grey-60 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97 text-grey-40 resize-none"
         ></textarea>
       </div>
       <div class="md:flex space-y-2">

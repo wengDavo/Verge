@@ -13,7 +13,6 @@ import { AchievmentsComponent } from '../achievments/achievments.component';
   ],
   template: `
     <section class="p-2 grid space-y-6">
-      <app-absract-design-sparkles />
       <app-section-title [title]="title" [description]="description" />
       <app-achievments />
     </section>

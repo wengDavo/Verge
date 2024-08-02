@@ -6,10 +6,10 @@ import { stepCardI } from './step-card.interface';
   standalone: true,
   imports: [],
   template: `
-     <article class=" border-l border-grey-15 relative rounded-md">
+     <article class=" border-l dark:border-grey-10 relative rounded-md border-white-85">
       <p class="font-medium px-6 py-3">Step {{ data.num }}</p>
       <div class="absolute -left-7 blurred-box-purple-60 "></div>
-      <div class="p-7 space-y-4 border border-grey-15 rounded-md">
+      <div class="p-7 space-y-4 border dark:border-grey-15 rounded-md border-white-90">
         <p>{{ data.title }}</p>
         <p class="text-sm font-medium text-grey-60 ">
           {{ data.description }}

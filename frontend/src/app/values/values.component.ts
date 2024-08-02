@@ -8,7 +8,7 @@ import { OnInit } from '@angular/core';
   standalone: true,
   imports: [ValueComponent],
   template: ` <section
-    class="p-6 grid gap-5 divide-y divide-grey-15 border border-grey-15 outline outline-grey-10 rounded-xl md:grid md:grid-cols-2"
+    class="p-6 grid gap-5 divide-y dark:divide-grey-15 border dark:border-grey-15 outline dark:outline-grey-10 rounded-xl md:grid md:grid-cols-2  divide-white-85 border-white-95 outline-white-90"
   >
     @for (item of valueData; track $index) {
     <app-value [value]="item" />

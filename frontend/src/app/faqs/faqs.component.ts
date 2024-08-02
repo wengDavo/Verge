@@ -24,17 +24,14 @@ import { NgStyle } from '@angular/common';
         [description]="description"
         [category]="category"
       />
-      <article class="relative overflow-hidden">
-        <div
-          class="grid md:grid-cols-3 gap-2"
-          [ngStyle]="moveSlide()"
-        >
+      <article class="grid gap-2">
+        <div class="grid md:grid-cols-3 gap-2">
           @for (item of faqsData; track $index) {
           <app-faq [faq]="item" />
           }
         </div>
+        <app-pagination-navigation />
       </article>
-      <app-pagination-navigation (prev)="prev($event)" (next)="next($event)" />
     </section>
   `,
   styles: ``,
@@ -45,20 +42,6 @@ export class FaqsComponent implements OnInit {
   category: string = "FAQ's";
   faqsData!: Array<faqI>;
 
-  curSlide: number = 0;
-  moveSlide = (): object => {
-    return { transform: `translateX( -${this.curSlide * 100}%)` };
-  };
-  next = (e: string) => {
-    this.curSlide === this.faqsData.length - 1
-      ? (this.curSlide = 0)
-      : this.curSlide++;
-  };
-  prev = (e: string) => {
-    this.curSlide === 0
-      ? (this.curSlide = this.faqsData.length - 1)
-      : this.curSlide--;
-  };
   ngOnInit(): void {
     this.faqsData = [
       {

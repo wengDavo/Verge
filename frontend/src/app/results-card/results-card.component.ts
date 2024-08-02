@@ -7,13 +7,13 @@ import { resultsCardI } from './results-card.interface';
   imports: [],
   template: `
     <article
-      class="border border-white-90 dark:border-grey-20 p-6 grid gap-6 rounded-xl md:mr-1"
+      class="border border-white-85 dark:border-grey-20 p-6 grid gap-6 rounded-xl md:mr-1 "
     >
       <figure class="h-[210px]">
         <img [src]="data.img" alt="" class="w-full h-full rounded-xl" />
       </figure>
       <article class="grid gap-6">
-        <div class="font-medium text-sm rounded-[28px] py-1 px-4 border border-grey-15 w-fit">
+        <div class="font-medium text-sm rounded-[28px] py-1 px-4 border dark:border-grey-15 w-fit border-white-85">
           <p>{{ data.location }}</p>
         </div>
         <div>

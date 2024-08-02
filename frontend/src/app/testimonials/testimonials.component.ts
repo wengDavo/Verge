@@ -24,17 +24,14 @@ import { NgStyle } from '@angular/common';
         [description]="description"
         [category]="category"
       />
-      <article class="relative overflow-hidden">
-        <div
-          class="flex transition-transform duration-500 ease-in-out"
-          [ngStyle]="moveSlide()"
-        >
+      <article class="grid gap-2">
+        <div class="grid md:grid-cols-3 gap-2">
           @for (item of testimonialsData; track $index) {
           <app-testimony [testimony]="item" />
           }
         </div>
+        <app-pagination-navigation />
       </article>
-      <app-pagination-navigation (prev)="prev($event)" (next)="next($event)" />
     </section>
   `,
   styles: ``,
@@ -46,43 +43,26 @@ export class TestimonialsComponent implements OnInit {
   category: string = 'Testomonies';
   testimonialsData!: Array<testimonyI>;
 
-  curSlide: number = 0;
-  moveSlide = (): object => {
-    return { transform: `translateX( -${this.curSlide * 100}%)` };
-  };
-  next = (e: string) => {
-    this.curSlide === this.testimonialsData.length - 1
-      ? (this.curSlide = 0)
-      : this.curSlide++;
-  };
-  prev = (e: string) => {
-    this.curSlide === 0
-      ? (this.curSlide = this.testimonialsData.length - 1)
-      : this.curSlide--;
-  };
   ngOnInit(): void {
     this.testimonialsData = [
       {
         rating: 5,
         title: 'Exceptional Service!',
-        review:
-          "Our experience with Verge was outstanding. Their team's dedicationand professionalism made finding our dream home a breeze. Highly recommended!",
+        review: 'Our experience with Verge was outstanding.',
         userName: 'Wade Warren',
         userLocation: 'USA, CAlifornia',
       },
       {
         rating: 5,
         title: 'Exceptional Service!',
-        review:
-          "Our experience with Verge was outstanding. Their team's dedicationand professionalism made finding our dream home a breeze. Highly recommended!",
+        review: 'Our experience with Verge was outstanding.',
         userName: 'Paul Wosetimi',
         userLocation: 'USA, CAlifornia',
       },
       {
         rating: 5,
-        title: 'Golden Nwosu!',
-        review:
-          "Our experience with Verge was outstanding. Their team's dedicationand professionalism made finding our dream home a breeze. Highly recommended!",
+        title: 'Exceptional Service!',
+        review: 'Our experience with Verge was outstanding.',
         userName: 'Wade Warren',
         userLocation: 'USA, CAlifornia',
       },

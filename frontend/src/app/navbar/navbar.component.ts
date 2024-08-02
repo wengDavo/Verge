@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Inject } from '@angular/core';
 import { appName, themeConfig } from '../app.config';
+import { RouterLinkActive, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,7 @@ import { appName, themeConfig } from '../app.config';
   ],
   template: `
     <nav
-      class="flex p-5 border-white-90 dark:border-grey-20 relative border-t border-b dark:bg-grey-10 items-center md:gap-8"
+      class="flex p-5 border-white-85 dark:border-grey-20 relative border-t border-b dark:bg-grey-10 items-center md:gap-8"
     >
       <figure class="flex gap-1">
         <img src="/assets/icons/logo.svg" alt="" class="h-7 w-7" />
@@ -32,15 +33,40 @@ import { appName, themeConfig } from '../app.config';
           <mat-icon>menu</mat-icon>
         </button>
         <menu class="hidden md:flex md:justify-center md:gap-8">
-          <li class="hover:bg-white-90 border-white-95 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg">Home</li>
-          <li class="hover:bg-white-90 border-white-95 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg">About Us</li>
-          <li class="hover:bg-white-90 border-white-95 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg">Properties</li>
-          <li class="hover:bg-white-90 border-white-95 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg">Services</li>
-          <li class="hover:bg-white-90 border-white-95 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg">Contact Us</li>
+          <li
+            class="hover:bg-white-90 border-white-90 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg"
+          >
+            About Us
+          </li>
+          <li
+            class="hover:bg-white-90 border-white-90 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg"
+          >
+            Properties
+          </li>
+          <li
+            class="hover:bg-white-90 border-white-90 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg"
+          >
+            Services
+          </li>
+          <li
+            class="hover:bg-white-90 border-white-90 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg"
+          >
+            Contact Us
+          </li>
         </menu>
       </div>
       @if(dropdown){
-      <div class="absolute bg-red-100 left-0 right-0 top-0 z-10">hey</div>
+      <div class="fixed bg-white-85 dark:bg-grey-15 z-30 right-0 bottom-0 top-0 w-1/2">
+        <button (click)="toggleDropdown()" class="md:hidden">
+          <mat-icon>close</mat-icon>
+          <menu>
+            <li>About Us</li>
+            <li>Properties</li>
+            <li>Services</li>
+            <li>Contact Us</li>
+          </menu>
+        </button>
+      </div>
       }
     </nav>
   `,

@@ -8,7 +8,7 @@ import { unlockCardI } from './unlock-card.interface';
   imports: [MatIconModule],
   template: `
     <article
-      class="bg-white-90 dark:bg-grey-8 px-5 py-6 rounded-md grid gap-4 dark:border-grey-15 border md:p-2 text-abs-black dark:text-abs-white"
+      class="bg-white-90 dark:bg-grey-8 px-5 py-6 rounded-md grid gap-4 dark:border-grey-15 border-white-95 border md:p-2 text-abs-black dark:text-abs-white"
     >
       <div>
         <p class="flex items-center gap-2">

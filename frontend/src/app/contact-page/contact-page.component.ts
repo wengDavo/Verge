@@ -27,7 +27,7 @@ import { FooterComponent } from '../footer/footer.component';
   template: `
     <app-banner />
     <app-navbar />
-    <app-bg-title [title]="title" [description]="descirption" />
+    <app-bg-title [title]="title" [description]="description" />
     <section class="p-2 grid space-y-6 md:px-7">
       <app-hero-cards />
       <app-section-title
@@ -44,7 +44,7 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class ContactPageComponent {
   title: string = 'Get in Touch with Estatein';
-  descirption: string =
+  description: string =
     "Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have.";
   connectTitle: string = "Let's Connect";
   connectDescription: string =

@@ -15,12 +15,14 @@ import { PaginationNavigationComponent } from '../pagination-navigation/paginati
   template: `
     <section class="grid gap-8">
       <app-section-title [title]="title" [description]="description" />
-      <article class="md:grid md:grid-cols-3">
-        @for (item of resultsCardData; track $index) {
-        <app-results-card [data]="item" />
-        }
+      <article class="grid gap-2">
+        <div class="grid gap-2 md:grid-cols-3">
+          @for (item of resultsCardData; track $index) {
+          <app-results-card [data]="item" />
+          }
+        </div>
+        <app-pagination-navigation />
       </article>
-      <app-pagination-navigation />
     </section>
   `,
   styles: ``,

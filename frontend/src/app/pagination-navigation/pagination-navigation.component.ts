@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatIconModule],
   template: `
     <article
-      class="border-t border-white-90 dark:border-grey-20 p-4 flex justify-between"
+      class="border-t border-white-85 dark:border-grey-20 p-4 flex justify-between"
     >
       <button
         class=" bg-white-95 border border-white-90 dark:bg-grey-15 dark:border-grey-15 p-[8px] rounded-lg md:hidden"
@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
       </button>
       <div class="flex justify-center items-center text-sm gap-1 md:ml-auto">
         <div
-          class="rounded-full bg-white-95 border-white-90 dark:bg-grey-15 p-[4px] flex justify-center items-center border  dark:border-grey-20 cursor-pointer"
+          class="rounded-full bg-white-95 border-white-85 dark:bg-grey-15 p-[4px] flex justify-center items-center border  dark:border-grey-20 cursor-pointer"
           (click)="prevClicked()"
         >
           <mat-icon class="dark:text-grey-60">west</mat-icon>
@@ -27,7 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
           <span class="text-grey-60">60</span>
         </p>
         <div
-          class="rounded-full bg-white-95 border-white-90 dark:bg-grey-15 p-[4px] flex justify-center items-center border  dark:border-grey-20 cursor-pointer"
+          class="rounded-full bg-white-95 border-white-85 dark:bg-grey-15 p-[4px] flex justify-center items-center border  dark:border-grey-20 cursor-pointer"
           (click)="nextClicked()"
         >
           <mat-icon class="">east</mat-icon>

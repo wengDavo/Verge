@@ -7,7 +7,7 @@ import { SectionTitleComponent } from '../section-title/section-title.component'
   imports: [SectionTitleComponent],
   template: `
     <article
-      class="rounded-md border border-grey-10 p-4 md:p-6 grid gap-8 background-abstract"
+      class="rounded-md border dark:border-grey-10 border-white-85 p-4 md:p-6 grid gap-8 background-abstract"
     >
       <figure class="grid gap-2">
         <div class="grid grid-cols-2 gap-1">

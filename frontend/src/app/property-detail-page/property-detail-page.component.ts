@@ -29,7 +29,7 @@ import { FooterComponent } from '../footer/footer.component';
     <app-navbar />
     <section class="p-2 grid space-y-6 md:px-8">
       <app-property-gallery />
-      <article class="md:grid md:grid-cols-2 md:gap-2">
+      <article class="grid md:grid-cols-2 gap-2">
         <app-property-description />
         <app-property-features />
       </article>

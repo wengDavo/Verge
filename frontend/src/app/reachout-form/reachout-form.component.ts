@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
   template: `
     <form
       action=""
-      class="border border-grey-15 bg-grey-10 p-5 space-y-5 rounded-[6px] "
+      class="border dark:border-grey-15 border-white-85 dark:bg-grey-10 bg-white-95 p-5 space-y-5 rounded-[6px] "
     >
       <fieldset class="md:grid md:grid-cols-4 gap-4">
         <div class="grid gap-2">
@@ -18,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
             name=""
             id=""
             placeholder="Enter First Name"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85"
           />
         </div>
         <div class="grid gap-2">
@@ -28,7 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
             name=""
             id=""
             placeholder="Enter Last Name"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85"
           />
         </div>
         <div class="grid gap-2">
@@ -38,7 +38,7 @@ import { MatIconModule } from '@angular/material/icon';
             name=""
             id=""
             placeholder="Enter Your Email"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85"
           />
         </div>
         <div class="grid gap-2">
@@ -48,7 +48,7 @@ import { MatIconModule } from '@angular/material/icon';
             name=""
             id=""
             placeholder="Enter Phone Number"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85"
           />
         </div>
         <div class="grid gap-2">
@@ -56,7 +56,7 @@ import { MatIconModule } from '@angular/material/icon';
           <select
             name=""
             id=""
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
           >
             <option value="" disabled selected>Select Location</option>
             <option value="">Abuja</option>
@@ -68,7 +68,7 @@ import { MatIconModule } from '@angular/material/icon';
           <select
             name=""
             id=""
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
           >
             <option value="" disabled selected>Select Property Type</option>
             <option value="">Duplex</option>
@@ -80,7 +80,7 @@ import { MatIconModule } from '@angular/material/icon';
           <select
             name=""
             id=""
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
           >
             <option value="" disabled selected>Select no. of Bedrooms</option>
             <option value="">4</option>
@@ -92,7 +92,7 @@ import { MatIconModule } from '@angular/material/icon';
           <select
             name=""
             id=""
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
           >
             <option value="" disabled selected>Select no. of Bathrooms</option>
             <option value="">4</option>
@@ -106,7 +106,7 @@ import { MatIconModule } from '@angular/material/icon';
           <select
             name=""
             id=""
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
           >
             <option value="" disabled selected>Select Budget</option>
             <option value="">500</option>
@@ -127,7 +127,7 @@ import { MatIconModule } from '@angular/material/icon';
                 name=""
                 id=""
                 placeholder="Enter Your Number"
-                class="rounded-md pl-10 py-4  placeholder:text-grey-40 bg-grey-15 border border-grey-20 w-full"
+                class="rounded-md pl-10 py-4  placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 w-full"
               />
               <input
                 type="radio"
@@ -147,7 +147,7 @@ import { MatIconModule } from '@angular/material/icon';
                 name=""
                 id=""
                 placeholder="Enter Your Email"
-                class="rounded-md pl-10 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 w-full"
+                class="rounded-md pl-10 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 w-full"
               />
               <input
                 type="radio"
@@ -165,15 +165,20 @@ import { MatIconModule } from '@angular/material/icon';
           name=""
           id=""
           placeholder="Enter Your Message Here"
-          class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40 resize-none"
+          class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40 resize-none"
         ></textarea>
       </div>
       <div class="md:flex">
-        <div class="flex text-xs text-grey-60 space-x-2 md:font-medium md:grow items-center">
+        <div
+          class="flex text-xs text-grey-60 space-x-2 md:font-medium md:grow items-center"
+        >
           <input type="checkbox" name="" id="" />
           <p>I agree with the Terms of Use and Privacy Policy</p>
         </div>
-        <button type="submit" class="bg-purple-60 px-8 py-3 rounded-md w-full md:w-fit">
+        <button
+          type="submit"
+          class="bg-purple-60 px-8 py-3 rounded-md w-full md:w-fit"
+        >
           Send Your Message
         </button>
       </div>

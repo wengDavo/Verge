@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UnitTitleComponent } from '../unit-title/unit-title.component';
 import { SectionTitleComponent } from '../section-title/section-title.component';
 import { AbsractDesignSparklesComponent } from '../absract-design-sparkles/absract-design-sparkles.component';
 import { ValuesComponent } from '../values/values.component';
@@ -15,7 +14,6 @@ import { ValuesComponent } from '../values/values.component';
   template: `
     <section class="grid gap-8 md:grid-cols-2 md:gap-16">
       <article class="md:grid md:place-content-center">
-        <app-absract-design-sparkles />
         <app-section-title [title]="title" [description]="description" />
       </article>
       <app-values />

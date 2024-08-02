@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   template: `
     <form
       action=""
-      class="border border-grey-15 bg-grey-10 p-5 space-y-5 rounded-[6px] "
+      class="border dark:border-grey-15 border-white-95 dark:bg-grey-10 bg-white-90 p-5 space-y-5 rounded-[6px] "
     >
       <fieldset class="grid md:grid-cols-3 gap-4">
         <div class="grid gap-2">
@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
             name=""
             id=""
             placeholder="Enter First Name"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97"
           />
         </div>
         <div class="grid gap-2">
@@ -27,7 +27,7 @@ import { Component } from '@angular/core';
             name=""
             id=""
             placeholder="Enter Last Name"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97"
           />
         </div>
         <div class="grid gap-2">
@@ -37,7 +37,7 @@ import { Component } from '@angular/core';
             name=""
             id=""
             placeholder="Enter Your Email"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97"
           />
         </div>
       </fieldset>
@@ -49,7 +49,7 @@ import { Component } from '@angular/core';
             name=""
             id=""
             placeholder="Enter Phone Number"
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97"
           />
         </div>
         <div class="grid gap-2 ">
@@ -57,7 +57,7 @@ import { Component } from '@angular/core';
           <select
             name=""
             id=""
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97 text-grey-40"
           >
             <option value="" disabled selected>Select Inquiry Type</option>
             <option value="">500</option>
@@ -69,7 +69,7 @@ import { Component } from '@angular/core';
           <select
             name=""
             id=""
-            class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40"
+            class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97 text-grey-40"
           >
             <option value="" disabled selected>Select</option>
             <option value="">Social Media</option>
@@ -83,7 +83,7 @@ import { Component } from '@angular/core';
           name=""
           id=""
           placeholder="Enter Your Message Here"
-          class="rounded-md px-5 py-4 placeholder:text-grey-40 bg-grey-15 border border-grey-20 text-grey-40 resize-none"
+          class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-95 border dark:border-grey-20 border-white-97 text-grey-40 resize-none"
         ></textarea>
       </div>
       <div class="md:flex space-y-2">

@@ -8,8 +8,8 @@ module.exports = {
         abs: {
           white: "#FFFFFF",
           black: "#000000",
-          // dark: "#191622",
-          // dark: "#211E2F",
+          // sleep: "#191622",
+          // night: "#211E2F",
           dark: "#141414",
           ghost: "#F1F3F2",
         },
@@ -24,9 +24,10 @@ module.exports = {
           99: "#FBFAFF",
         },
         white: {
-          90: "#E4E4E7",
-          95: "#F1F1F3",
-          97: "#F7F7F8",
+          85: "#E4E4E7", //8
+          90: "#F1F1F3", //10
+          95: "#F7F7F8", //15
+          97: "#F8F9FA", //20
           99: "#FCFCFD",
         },
         grey: {

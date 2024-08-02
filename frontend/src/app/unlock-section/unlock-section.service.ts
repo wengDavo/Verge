@@ -37,7 +37,7 @@ export class UnlockSectionService {
       ],
       panel: {
         title: 'Unlock the Value of Your Property Today',
-        msg: "'Ready to unlock the true value of your property? Explore our Property Selling Service categories and let us help you achieve the best deal possible for your valuable asset.",
+        msg: "Ready to unlock the true value of your property? Explore our Property Selling Service categories and let us help you achieve the best deal possible for your valuable asset.",
       },
     },
     {

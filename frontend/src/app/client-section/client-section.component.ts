@@ -15,9 +15,8 @@ import { PaginationNavigationComponent } from '../pagination-navigation/paginati
     PaginationNavigationComponent,
   ],
   template: ` <section class="grid gap-8">
-    <app-absract-design-sparkles />
     <app-section-title [title]="title" [description]="description" />
-    <div  class="md:grid md: grid-cols-2 md:gap-2">
+    <div class="grid md:grid-cols-2 gap-2 md:gap-3">
       @for (item of clientCardData; track $index) {
       <app-client-card [data]="item" />
 

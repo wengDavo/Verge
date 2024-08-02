@@ -13,7 +13,7 @@ import { Component, Input } from '@angular/core';
         </p>
       </div>
       <button
-        class=" bg-white-95 border border-white-90 dark:bg-grey-15 dark:border-grey-15 p-[8px] rounded-lg hidden md:block md:self-center md:items-end"
+        class=" bg-white-90 border border-white-85 dark:bg-grey-15 dark:border-grey-15 p-[8px] rounded-lg hidden md:block md:self-center md:items-end"
       >
         View All {{ category }}
       </button>

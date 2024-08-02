@@ -8,7 +8,6 @@ import { StepsComponent } from '../steps/steps.component';
   standalone: true,
   imports: [StepsComponent, SectionTitleComponent, AbsractDesignSparklesComponent],
   template: ` <section class="grid gap-8">
-    <app-absract-design-sparkles />
     <app-section-title [title]="title" [description]="description" />
     <app-steps />
   </section>`,
