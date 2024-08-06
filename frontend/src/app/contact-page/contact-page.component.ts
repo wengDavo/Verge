@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { BannerComponent } from '../banner/banner.component';
 import { HeroCardsComponent } from '../hero-cards/hero-cards.component';
 import { BgTitleComponent } from '../bg-title/bg-title.component';
 import { SectionTitleComponent } from '../section-title/section-title.component';
@@ -14,8 +12,6 @@ import { FooterComponent } from '../footer/footer.component';
   selector: 'app-contact-page',
   standalone: true,
   imports: [
-    BannerComponent,
-    NavbarComponent,
     HeroCardsComponent,
     BgTitleComponent,
     SectionTitleComponent,
@@ -25,10 +21,8 @@ import { FooterComponent } from '../footer/footer.component';
     FooterComponent,
   ],
   template: `
-    <app-banner />
-    <app-navbar />
     <app-bg-title [title]="title" [description]="description" />
-    <section class="p-2 grid space-y-6 md:px-7">
+    <section class="p-2 grid gap-6 md:px-8">
       <app-hero-cards />
       <app-section-title
         [title]="connectTitle"

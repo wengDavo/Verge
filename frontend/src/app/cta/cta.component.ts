@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cta',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   template: `
     <article class="relative py-12 px-4 grid gap-7 md:gap-36 border border-y-grey-15 border-x-grey-8 bg-grey-8 text-abs-white md:flex">
       <div class="z-10 ">
@@ -19,7 +20,7 @@ import { Component } from '@angular/core';
         </p>
       </div>
       <button class="bg-purple-60 rounded-lg px-5 py-[14px] w-full z-10 md:self-center">
-        Explore Properties Now
+        <a routerLink="/properties">Explore Properties Now</a>
       </button>
       <figure class="absolute bottom-0 md:right-0">
         <img src="assets/images/shatteredBoxesRight.svg" alt="" class=""/>

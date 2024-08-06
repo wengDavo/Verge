@@ -1,15 +1,9 @@
-import {
-  Component,
-  Signal,
-  WritableSignal,
-  computed,
-  signal,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { AbsractDesignSparklesComponent } from '../absract-design-sparkles/absract-design-sparkles.component';
 import { PropertyComponent } from '../property/property.component';
 import { MatIconModule } from '@angular/material/icon';
 import { propertyI } from '../property/property.interface';
-import { OnInit } from '@angular/core';
 import { UnitTitleComponent } from '../unit-title/unit-title.component';
 import { PaginationNavigationComponent } from '../pagination-navigation/pagination-navigation.component';
 
@@ -25,6 +19,7 @@ import { NgStyle } from '@angular/common';
     UnitTitleComponent,
     PaginationNavigationComponent,
     NgStyle,
+    RouterModule
   ],
   template: `
     <section class="grid gap-4 md:px-10">
@@ -34,7 +29,7 @@ import { NgStyle } from '@angular/common';
         [description]="description"
         [category]="category"
       />
-      <article class="grid gap-2">
+      <!-- <article class="grid gap-2">
         <div
           class="grid gap-2 md:grid-cols-3"
           [ngStyle]="moveSlide()"
@@ -44,10 +39,26 @@ import { NgStyle } from '@angular/common';
           }
         </div>
         <app-pagination-navigation (prev)="prev($event)" (next)="next($event)" />
+      </article> -->
+      <article class="overflow-scroll space-x-1 no-scrollbar">
+        <div class="flex gap-4">
+          @for (item of propertiesData; track $index) {
+          <app-property [propertyData]="item" />
+          }
+        </div>
       </article>
+      <app-pagination-navigation />
     </section>
   `,
-  styles: ``,
+  styles: `
+    .no-scrollbar{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar{
+      display:none;
+    }
+    `,
 })
 export class FeaturedPropertiesComponent implements OnInit {
   title: string = 'Featured Properties';
@@ -56,7 +67,7 @@ export class FeaturedPropertiesComponent implements OnInit {
   category: string = 'Properties';
   propertiesData!: Array<propertyI>;
 
-  curSlide: number = 0;
+  curSlide: number = 1;
   moveSlide = (): object => {
     return { transform: `translateX( -${this.curSlide * 100}%)` };
   };

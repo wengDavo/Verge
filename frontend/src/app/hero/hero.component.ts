@@ -1,12 +1,13 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { HeroCardsComponent } from '../hero-cards/hero-cards.component';
-import { appName } from '../app.config';
+import { APP_NAME } from '../app.config';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [MatIconModule, HeroCardsComponent],
+  imports: [MatIconModule, HeroCardsComponent, RouterModule],
   template: `
     <section class="grid gap-4">
       <article class="relative md:flex md:gap-2 md:flex-row-reverse">
@@ -23,7 +24,7 @@ import { appName } from '../app.config';
         <div class="mt-16 grid gap-4 md:px-[60px] ">
           <div class="md:leading-6 md:space-y-4 ">
             <p class="text-[28px] leading-10 w-[80%] md:text-[48px]">
-              Discover Your Dream Property With {{ app_name }}
+              Discover Your Dream Property With {{ APP_NAME }}
             </p>
             <p class="text-sm font-medium text-grey-60 md:w-[80%]">
               Your journey to finding the perfect property begins here. Explore
@@ -34,12 +35,12 @@ import { appName } from '../app.config';
             <button
               class="p-4 md:p-2 grid place-content-center text-sm dark:bg-grey-10 w-full rounded-lg bg-red-300 md:w-[151px] md:h-[49px] border dark:border-grey-15 "
             >
-              Learn More
+              <a routerLink="/services">Learn More</a>
             </button>
             <button
               class="p-4 md:p-2 grid place-content-center text-sm bg-purple-60 w-full rounded-lg md:w-[151px] md:h-[49px]"
             >
-              Browse Properties
+              <a routerLink="/properties">Browse Properties</a>
             </button>
           </div>
           <div class="grid gap-2 text-abs-white md:flex">
@@ -78,7 +79,5 @@ import { appName } from '../app.config';
   styles: ``,
 })
 export class HeroComponent {
-  constructor(@Inject(appName) public app_name: string) {
-    this.app_name = app_name;
-  }
+  public APP_NAME = inject(APP_NAME)
 }

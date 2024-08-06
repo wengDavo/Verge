@@ -24,17 +24,26 @@ import { NgStyle } from '@angular/common';
         [description]="description"
         [category]="category"
       />
-      <article class="grid gap-2">
-        <div class="grid md:grid-cols-3 gap-2">
+
+      <article class="overflow-scroll space-x-1 no-scrollbar">
+        <div class="flex gap-4">
           @for (item of faqsData; track $index) {
           <app-faq [faq]="item" />
           }
         </div>
-        <app-pagination-navigation />
       </article>
+      <app-pagination-navigation />
     </section>
   `,
-  styles: ``,
+  styles: `
+    .no-scrollbar{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar{
+      display:none;
+    }
+    `,
 })
 export class FaqsComponent implements OnInit {
   title: string = 'Frequently Asked Questions';

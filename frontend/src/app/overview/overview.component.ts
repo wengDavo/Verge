@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, inject } from '@angular/core';
 import { OverviewCardComponent } from '../overview-card/overview-card.component';
 import { overviewCardI } from '../overview-card/overview-card.interface';
-import { appName } from '../app.config';
+import { APP_NAME } from '../app.config';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
       <article class="p-2">
         <figure class="flex gap-2">
           <img src="assets/icons/logo.svg" alt="" class="w-6" />
-          <figcaption>{{ app_name }}</figcaption>
+          <figcaption>{{ APP_NAME }}</figcaption>
         </figure>
         <div class="grid grid-cols-2 md:flex md:justify-between">
           @for (item of overviewCardData; track $index) {
@@ -33,7 +33,7 @@ import { MatIconModule } from '@angular/material/icon';
         </div>
         <div class="md:flex md:gap-4">
           <p>Terms & Conditions</p>
-          <p>{{ year }} {{ app_name }} All Rights Reserved.</p>
+          <p>{{ year }} {{ APP_NAME }} All Rights Reserved.</p>
         </div>
       </article>
     </section>
@@ -44,10 +44,8 @@ export class OverviewComponent implements OnInit {
   overviewCardData!: Array<overviewCardI>;
   date: Date = new Date();
   year: number = this.date.getFullYear();
-
-  constructor(@Inject(appName) public app_name: string) {
-    this.app_name = app_name;
-  }
+  public APP_NAME = inject(APP_NAME)
+  
   ngOnInit(): void {
     this.overviewCardData = [
       {

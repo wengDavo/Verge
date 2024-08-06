@@ -16,15 +16,25 @@ import { PaginationNavigationComponent } from '../pagination-navigation/paginati
   ],
   template: ` <section class="grid gap-8">
     <app-section-title [title]="title" [description]="description" />
-    <div class="grid md:grid-cols-2 gap-2 md:gap-3">
-      @for (item of clientCardData; track $index) {
-      <app-client-card [data]="item" />
 
-      }
-    </div>
+    <article class="overflow-scroll space-x-1 no-scrollbar">
+      <div class="flex gap-4">
+        @for (item of clientCardData; track $index) {
+        <app-client-card [data]="item" />
+        }
+      </div>
+    </article>
     <app-pagination-navigation />
   </section>`,
-  styles: ``,
+  styles: `
+    .no-scrollbar{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar{
+      display:none;
+    }
+    `,
 })
 export class ClientSectionComponent implements OnInit {
   title: string = 'Our Valued Clients';

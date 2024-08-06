@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { propertyI } from './property.interface';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-property',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, RouterModule],
   template: `
     <article class="border border-white-85 dark:border-grey-20 p-6 grid gap-6 rounded-xl md:mr-1">
       <figure class="w-[310px] h-[210px] mx-auto">
@@ -36,7 +37,7 @@ import { propertyI } from './property.interface';
             <p class="font-semibold text-[18px]">$ {{ propertyData.price }}</p>
           </div>
           <button class="text-abs-white bg-purple-60 px-5 py-[14px] rounded-lg">
-            View Property Details
+            <a routerLink="/property">View Property Details</a>
           </button>
         </div>
       </article>

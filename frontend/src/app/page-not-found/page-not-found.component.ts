@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { BannerComponent } from '../banner/banner.component';
-import { NavbarComponent } from '../navbar/navbar.component';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-page-not-found',
   standalone: true,
-  imports: [BannerComponent, NavbarComponent],
+  imports: [RouterModule],
   template: `
-    <!-- <app-banner /> -->
-    <!-- <app-navbar /> -->
+
     <section class="signika-negative text-center grid gap-6 p-4 place-content-center">
       <figure class="flex md:space-x-2">
         <p class="font-medium text-[#222222] text-[150px] rotate-[10deg]">4</p>
@@ -20,9 +17,9 @@ import { NavbarComponent } from '../navbar/navbar.component';
         Whoops! This page must be a ghost - it's not here!
       </p>
       <button
-        class=" px-14 py-4 bg-[#222222] font-bold text-lg rounded-[100px] md:w-fit md:mx-auto"
+        class=" px-14 py-4 bg-white-90 dark:bg-[#222222] font-bold text-lg rounded-[100px] md:w-fit md:mx-auto"
       >
-        Find Shelter
+        <a routerLink="/home">Find Shelter</a>
       </button>
     </section>
   `,

@@ -37,6 +37,11 @@ export class TeamsSectionComponent implements OnInit {
         name: 'Benjamin Ola',
         position: 'Developer',
       },
+      {
+        img: 'assets/images/houseHandheld.png',
+        name: 'Cyril Femi',
+        position: 'Manager',
+      },
     ];
   }
 }

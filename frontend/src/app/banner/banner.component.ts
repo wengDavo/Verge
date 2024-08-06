@@ -1,6 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { appName } from '../app.config';
+import { APP_NAME } from '../app.config';
 
 @Component({
   selector: 'app-banner',
@@ -10,7 +10,7 @@ import { appName } from '../app.config';
     @if(display){
     <article class="relative background">
       <p class="text-center text-abs-dark dark:text-abs-white">
-        ✨Discover your dream property with {{ app_name }} Learn More
+        ✨Discover your dream property with {{ APP_NAME }} Learn More
       </p>
       <div
         class="absolute top-4 right-2 -translate-y-1/2 cursor-pointer grid place-content-center rounded-full transparentGrey"
@@ -37,9 +37,7 @@ import { appName } from '../app.config';
     `,
 })
 export class BannerComponent {
+  public APP_NAME = inject(APP_NAME);
   display: boolean = true;
-  toggleBanner = () => (this.display = !this.display);
-  constructor(@Inject(appName) public app_name: string) {
-    this.app_name = app_name;
-  }
+  toggleBanner = () => this.display = !this.display;
 }

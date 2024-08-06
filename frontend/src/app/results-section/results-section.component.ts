@@ -15,17 +15,25 @@ import { PaginationNavigationComponent } from '../pagination-navigation/paginati
   template: `
     <section class="grid gap-8">
       <app-section-title [title]="title" [description]="description" />
-      <article class="grid gap-2">
-        <div class="grid gap-2 md:grid-cols-3">
+      <article class="overflow-scroll space-x-1 no-scrollbar">
+        <div class="flex gap-4">
           @for (item of resultsCardData; track $index) {
           <app-results-card [data]="item" />
           }
         </div>
-        <app-pagination-navigation />
       </article>
+      <app-pagination-navigation />
     </section>
   `,
-  styles: ``,
+  styles: `
+    .no-scrollbar{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar{
+      display:none;
+    }
+    `,
 })
 export class ResultsSectionComponent implements OnInit {
   title: string = 'Discover a World of Possibilities';

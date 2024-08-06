@@ -1,27 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { Inject } from '@angular/core';
-import { appName, themeConfig } from '../app.config';
+import { APP_NAME, THEME_CONFIG } from '../app.config';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MatIconModule],
-  providers: [
-    { provide: themeConfig, useValue: localStorage.getItem('theme') },
-  ],
+  imports: [MatIconModule, RouterLink, RouterLinkActive],
   template: `
     <nav
       class="flex p-5 border-white-85 dark:border-grey-20 relative border-t border-b dark:bg-grey-10 items-center md:gap-8"
     >
-      <figure class="flex gap-1">
+      <!-- <figure class="flex gap-1"> -->
+      <a routerLink="/home" class="flex gap-1">
         <img src="/assets/icons/logo.svg" alt="" class="h-7 w-7" />
-        <figcaption class="self-center">{{ app_name }}</figcaption>
-      </figure>
+        <figcaption class="self-center">{{ APP_NAME }}</figcaption>
+      </a>
+      <!-- </figure> -->
       <div class="self-center ml-auto md:order-3">
         <button (click)="changeTheme()">
-          @if (globalTheme == "dark") {
+          @if (THEME_CONFIG == "dark") {
           <mat-icon>light_mode</mat-icon>
           }@else {
           <mat-icon>dark_mode</mat-icon>
@@ -36,36 +34,46 @@ import { RouterLinkActive, RouterLink } from '@angular/router';
           <li
             class="hover:bg-white-90 border-white-90 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg"
           >
-            About Us
+            <a routerLink="/about" routerLinkActive="active">About</a>
           </li>
           <li
             class="hover:bg-white-90 border-white-90 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg"
           >
-            Properties
+            <a routerLink="/properties" routerLinkActive="active">Properties</a>
           </li>
           <li
             class="hover:bg-white-90 border-white-90 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg"
           >
-            Services
+            <a routerLink="/services" routerLinkActive="active">Services</a>
           </li>
           <li
             class="hover:bg-white-90 border-white-90 dark:hover:bg-grey-8 p-2 border dark:border-grey-15 cursor-pointer rounded-lg"
           >
-            Contact Us
+            <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
           </li>
         </menu>
       </div>
       @if(dropdown){
-      <div class="fixed bg-white-85 dark:bg-grey-15 z-30 right-0 bottom-0 top-0 w-1/2">
-        <button (click)="toggleDropdown()" class="md:hidden">
+      <div
+        class="fixed bg-white-85 dark:bg-grey-15 z-30 right-0 bottom-0 top-0 w-1/2 p-3"
+      >
+        <button (click)="toggleDropdown()" class="md:hidden absolute right-2">
           <mat-icon>close</mat-icon>
-          <menu>
-            <li>About Us</li>
-            <li>Properties</li>
-            <li>Services</li>
-            <li>Contact Us</li>
-          </menu>
         </button>
+        <menu class="grid gap-6 mt-10">
+          <li>
+            <a routerLink="/about">About</a>
+          </li>
+          <li>
+            <a routerLink="/properties">Properties</a>
+          </li>
+          <li>
+            <a routerLink="/services">Services</a>
+          </li>
+          <li>
+            <a routerLink="/contact">Contact</a>
+          </li>
+        </menu>
       </div>
       }
     </nav>
@@ -74,15 +82,10 @@ import { RouterLinkActive, RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
   dropdown: boolean = false;
+  public APP_NAME = inject(APP_NAME);
+  public THEME_CONFIG = inject(THEME_CONFIG);
   toggleDropdown = () => (this.dropdown = !this.dropdown);
 
-  constructor(
-    @Inject(themeConfig) public globalTheme: string,
-    @Inject(appName) public app_name: string
-  ) {
-    this.globalTheme = globalTheme;
-    this.app_name = app_name;
-  }
   changeTheme(): void {
     const theme: string =
       localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
@@ -90,12 +93,12 @@ export class NavbarComponent {
       case 'dark':
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
-        this.globalTheme = 'dark';
+        this.THEME_CONFIG = 'dark';
         break;
       case 'light':
         document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');
-        this.globalTheme = 'light';
+        this.THEME_CONFIG = 'light';
         break;
       default:
         let prefTheme = window.matchMedia('(prefers-color-scheme: dark)')
@@ -104,7 +107,7 @@ export class NavbarComponent {
           : 'light';
         document.documentElement.classList.add(prefTheme);
         localStorage.setItem('theme', prefTheme);
-        this.globalTheme = prefTheme;
+        this.THEME_CONFIG = prefTheme;
         break;
     }
   }

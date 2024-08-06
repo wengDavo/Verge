@@ -6,7 +6,7 @@ import { faqI } from './faq.interface';
   imports: [],
   template: `
     <article
-      class="border border-white-85 dark:border-grey-15 p-8 grid gap-5 rounded-[10px]"
+      class="border border-white-85 dark:border-grey-15 p-8 grid gap-5 rounded-[10px] min-w-[300px]"
     >
       <h3 class="font-semibold text-lg">
         {{ faq.question }}

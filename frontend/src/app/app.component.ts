@@ -1,33 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { appName } from './app.config';
-// Pages
-import { HomePageComponent } from './home-page/home-page.component';
-import { AboutPageComponent } from './about-page/about-page.component';
-import { PropertiesPageComponent } from './properties-page/properties-page.component';
-import { PropertyDetailPageComponent } from './property-detail-page/property-detail-page.component';
-import { ServicesPageComponent } from './services-page/services-page.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
-
-import { RouterLink } from '@angular/router';
+import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
+import { APP_NAME, THEME_CONFIG } from './app.config';
+// Components
+import { BannerComponent } from './banner/banner.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterModule,
     RouterOutlet,
     RouterLink,
-
-    HomePageComponent,
-    AboutPageComponent,
-    PropertiesPageComponent,
-    PropertyDetailPageComponent,
-    ServicesPageComponent,
-    ContactPageComponent,
+    //
+    BannerComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
-  // template: ` <router-outlet></router-outlet> `,
   styleUrl: './app.component.css',
-  providers: [{ provide: appName, useValue: 'Verge' }],
+  providers: [
+    { provide: APP_NAME, useValue: 'Verge' },
+    { provide: THEME_CONFIG, useValue: localStorage.getItem('theme') },
+  ],
 })
 export class AppComponent {}

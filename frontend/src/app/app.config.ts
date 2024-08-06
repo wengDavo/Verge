@@ -1,6 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -10,5 +9,5 @@ export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync()]
 };
 
-export const themeConfig = new InjectionToken<string>("theme description");
-export const appName = new InjectionToken<string>("app name");
+export const THEME_CONFIG = new InjectionToken<string>("theme description");
+export const APP_NAME = new InjectionToken<string>("app name");

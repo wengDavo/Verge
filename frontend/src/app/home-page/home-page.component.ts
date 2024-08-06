@@ -10,8 +10,6 @@ import { FooterComponent } from '../footer/footer.component';
   selector: 'app-home-page',
   standalone: true,
   imports: [
-    BannerComponent,
-    NavbarComponent,
     HeroComponent,
     FeaturedPropertiesComponent,
     TestimonialsComponent,
@@ -19,15 +17,13 @@ import { FooterComponent } from '../footer/footer.component';
     FooterComponent,
   ],
   template: `
-    <app-banner />
-    <app-navbar />
-    <section class="p-2 grid space-y-6">
+    <section class="p-2 grid gap-6 md:px-8">
       <app-hero />
       <app-featured-properties />
       <app-testimonials />
       <app-faqs />
     </section>
-    <app-footer />
+    <app-footer/>
   `,
   styles: ``,
 })

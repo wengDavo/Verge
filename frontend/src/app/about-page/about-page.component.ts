@@ -13,8 +13,6 @@ import { FooterComponent } from '../footer/footer.component';
   selector: 'app-about-page',
   standalone: true,
   imports: [
-    BannerComponent,
-    NavbarComponent,
     AboutHeroComponent,
     ValuesContainerComponent,
     AchievmentsContainerComponent,
@@ -24,9 +22,7 @@ import { FooterComponent } from '../footer/footer.component';
     FooterComponent,
   ],
   template: `
-    <app-banner />
-    <app-navbar />
-    <section class="p-2 grid space-y-6 md:px-8">
+    <section class="p-2 grid gap-6 md:px-8">
       <app-about-hero />
       <app-values-container />
       <app-achievments-container />

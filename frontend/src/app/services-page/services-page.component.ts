@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { BannerComponent } from '../banner/banner.component';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { HeroCardsComponent } from '../hero-cards/hero-cards.component';
 import { UnlockSectionComponent } from '../unlock-section/unlock-section.component';
 import { unlockSectionI } from '../unlock-section/unlock-section.interface';
@@ -12,18 +10,14 @@ import { BgTitleComponent } from '../bg-title/bg-title.component';
   selector: 'app-services-page',
   standalone: true,
   imports: [
-    BannerComponent,
-    NavbarComponent,
     BgTitleComponent,
     HeroCardsComponent,
     UnlockSectionComponent,
     FooterComponent,
   ],
   template: `
-    <app-banner />
-    <app-navbar />
     <app-bg-title [title]="title" [description]="description" />
-    <section class="p-2 grid gap-6 mb-8">
+    <section class="p-2 grid gap-6 mb-8 md:px-8">
       <app-hero-cards />
       @for (item of sectionData; track $index) {
       <app-unlock-section [data]="item" />

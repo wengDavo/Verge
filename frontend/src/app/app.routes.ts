@@ -8,12 +8,17 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
-  // { path: 'home', component: HomePageComponent },
-  // { path: '', redirectTo: 'home', pathMatch: 'full' },
-  // { path: 'about', component: AboutPageComponent },
-  // { path: 'properties', component: PropertiesPageComponent },
-  // { path: 'services', component: ServicesPageComponent },
-  // { path: 'contact', component: ContactPageComponent },
-  // { path: 'services', component: ServicesPageComponent },
-  // { path: '**', component: PageNotFoundComponent },
+  { path: 'home', component: HomePageComponent, title: 'Home' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'about', component: AboutPageComponent, title: 'About' },
+  {
+    path: 'properties',
+    component: PropertiesPageComponent,
+    title: 'Properties',
+  },
+
+  { path: 'property', component: PropertyDetailPageComponent, title: 'Property' },
+  { path: 'services', component: ServicesPageComponent, title: 'Services' },
+  { path: 'contact', component: ContactPageComponent, title: 'Contact' },
+  { path: '**', component: PageNotFoundComponent },
 ];
