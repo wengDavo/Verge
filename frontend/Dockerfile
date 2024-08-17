@@ -20,13 +20,14 @@ RUN npx ngcc --properties es2023 browser modules main --first-only --create-ivy-
 COPY . .
 
 #### generate build
-RUN npm run build --prod
+RUN ng build --configuration production 
 
 ### STAGE 2 RUN: GET nginx, make it alpine next time
-FROM nginx:stable
+FROM nginx:stable-alpine
 
 #### copy artifact build from the 'build environment' check for build name of your project in package.json
-COPY --from=build /app/dist/verge/ /usr/share/nginx/html
+### make sure you put the correct path for the ouput of your build where index.html is
+COPY --from=build /app/dist/verge/browser/ /usr/share/nginx/html
 
 #### copy nginx conf
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
