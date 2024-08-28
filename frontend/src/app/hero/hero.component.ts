@@ -1,7 +1,7 @@
 import { Component, inject} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { HeroCardsComponent } from '../hero-cards/hero-cards.component';
-import { APP_NAME } from '../app.config';
+import { APP_NAME_TOKEN } from '../core/services/app_name.config';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -79,5 +79,5 @@ import { RouterModule } from '@angular/router';
   styles: ``,
 })
 export class HeroComponent {
-  public APP_NAME = inject(APP_NAME)
+  public APP_NAME = inject(APP_NAME_TOKEN)
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
-import { APP_NAME, THEME_CONFIG } from './app.config';
+import { RouterOutlet, RouterLink } from '@angular/router';
 // Components
 import { BannerComponent } from './banner/banner.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,19 +9,15 @@ import { FooterComponent } from './footer/footer.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterModule,
     RouterOutlet,
     RouterLink,
-    //
+    
     BannerComponent,
     NavbarComponent,
     FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers: [
-    { provide: APP_NAME, useValue: 'Verge' },
-    { provide: THEME_CONFIG, useValue: localStorage.getItem('theme') },
-  ],
+  providers: [],
 })
 export class AppComponent {}

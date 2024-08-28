@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, inject } from '@angular/core';
 import { OverviewCardComponent } from '../overview-card/overview-card.component';
 import { overviewCardI } from '../overview-card/overview-card.interface';
-import { APP_NAME } from '../app.config';
+import { APP_NAME_TOKEN } from '../core/services/app_name.config';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -44,7 +44,7 @@ export class OverviewComponent implements OnInit {
   overviewCardData!: Array<overviewCardI>;
   date: Date = new Date();
   year: number = this.date.getFullYear();
-  public APP_NAME = inject(APP_NAME)
+  public APP_NAME = inject(APP_NAME_TOKEN)
   
   ngOnInit(): void {
     this.overviewCardData = [

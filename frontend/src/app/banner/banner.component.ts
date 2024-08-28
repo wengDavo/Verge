@@ -1,6 +1,6 @@
 import { Component, inject} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { APP_NAME } from '../app.config';
+import { APP_NAME_TOKEN } from '../core/services/app_name.config';
 
 @Component({
   selector: 'app-banner',
@@ -37,7 +37,7 @@ import { APP_NAME } from '../app.config';
     `,
 })
 export class BannerComponent {
-  public APP_NAME = inject(APP_NAME);
+  public APP_NAME = inject(APP_NAME_TOKEN);
   display: boolean = true;
   toggleBanner = () => this.display = !this.display;
 }

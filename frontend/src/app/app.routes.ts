@@ -17,7 +17,7 @@ export const routes: Routes = [
     title: 'Properties',
   },
 
-  { path: 'property', component: PropertyDetailPageComponent, title: 'Property' },
+  { path: 'property/:id', component: PropertyDetailPageComponent, title: 'Property' },
   { path: 'services', component: ServicesPageComponent, title: 'Services' },
   { path: 'contact', component: ContactPageComponent, title: 'Contact' },
   { path: '**', component: PageNotFoundComponent },

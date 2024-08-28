@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { APP_NAME, THEME_CONFIG } from '../app.config';
+import { THEME_CONFIG_TOKEN} from '../core/services/THEME.config';
+import { APP_NAME_TOKEN } from '../core/services/app_name.config';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 
 @Component({
@@ -82,8 +83,9 @@ import { RouterLinkActive, RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
   dropdown: boolean = false;
-  public APP_NAME = inject(APP_NAME);
-  public THEME_CONFIG = inject(THEME_CONFIG);
+  public APP_NAME = inject(APP_NAME_TOKEN);
+  public THEME_CONFIG = inject(THEME_CONFIG_TOKEN);
+
   toggleDropdown = () => (this.dropdown = !this.dropdown);
 
   changeTheme(): void {

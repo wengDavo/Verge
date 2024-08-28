@@ -1,28 +1,26 @@
-import { Component } from '@angular/core';
-import { PropertyGalleryComponent } from '../property-gallery/property-gallery.component';
-import { PropertyDescriptionComponent } from '../property-description/property-description.component';
-import { PropertyFeaturesComponent } from '../property-features/property-features.component';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PropertyModule } from '../property/property.module';
+
 import { InquirySectionComponent } from '../inquiry-section/inquiry-section.component';
 import { PricingSectionComponent } from '../pricing-section/pricing-section.component';
 import { FaqsComponent } from '../faqs/faqs.component';
 
 import { FooterComponent } from '../footer/footer.component';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-property-detail-page',
   standalone: true,
   imports: [
     FooterComponent,
-    PropertyGalleryComponent,
-    PropertyDescriptionComponent,
-    PropertyFeaturesComponent,
+    PropertyModule,
     InquirySectionComponent,
     PricingSectionComponent,
     FaqsComponent,
-    FooterComponent
+    FooterComponent,
   ],
   template: `
-
     <section class="p-2 grid gap-6 md:px-8">
       <app-property-gallery />
       <article class="grid md:grid-cols-2 gap-2">
@@ -37,4 +35,11 @@ import { FooterComponent } from '../footer/footer.component';
   `,
   styles: ``,
 })
-export class PropertyDetailPageComponent {}
+export class PropertyDetailPageComponent implements OnInit {
+  private router = inject(ActivatedRoute);
+  roomId$ = this.router.paramMap.pipe(
+    map((params) => params.get('id'))
+  );
+
+  ngOnInit(): void {}
+}
