@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { THEME_CONFIG_TOKEN} from '../core/services/THEME.config';
+import { THEME_CONFIG_TOKEN } from '../core/services/theme.config';
 import { APP_NAME_TOKEN } from '../core/services/app_name.config';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 

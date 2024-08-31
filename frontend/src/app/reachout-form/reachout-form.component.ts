@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reachout-form',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, ReactiveFormsModule],
   template: `
     <form
+      [formGroup]="reachoutForm"
       action=""
       class="border dark:border-grey-15 border-white-85 dark:bg-grey-10 bg-white-95 p-5 space-y-5 rounded-[6px] "
     >
@@ -14,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">First Name</label>
           <input
+            formControlName="firstName"
             type="text"
             name=""
             id=""
@@ -24,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">Last Name</label>
           <input
+            formControlName="lastName"
             type="text"
             name=""
             id=""
@@ -34,6 +38,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">Email</label>
           <input
+            formControlName="email"
             type="email"
             name=""
             id=""
@@ -44,6 +49,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">Phone</label>
           <input
+            formControlName="phone"
             type="text"
             name=""
             id=""
@@ -54,6 +60,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">Preffered Location</label>
           <select
+            formControlName="location"
             name=""
             id=""
             class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
@@ -66,6 +73,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">Property Type</label>
           <select
+            formControlName="propertyType"
             name=""
             id=""
             class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
@@ -78,6 +86,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">No. of Bedrooms</label>
           <select
+            formControlName="bedrooms"
             name=""
             id=""
             class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
@@ -90,6 +99,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">No. of Bathrooms</label>
           <select
+            formControlName="bathrooms"
             name=""
             id=""
             class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
@@ -104,6 +114,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2 ">
           <label for="" class="font-semibold">Budget</label>
           <select
+            formControlName="budget"
             name=""
             id=""
             class="rounded-md px-5 py-4 placeholder:text-grey-40 dark:bg-grey-15 bg-white-90 border dark:border-grey-20 border-white-85 text-grey-40"
@@ -115,7 +126,7 @@ import { MatIconModule } from '@angular/material/icon';
         </div>
         <div class="space-y-2">
           <label for="" class="font-semibold">Preferred Contact Method</label>
-          <div class="md:flex md:gap-4 ">
+          <div class="md:flex md:gap-4 space-y-2">
             <div class="relative md:grow">
               <p
                 class="absolute top-[55%] -translate-y-1/2 -translate-x-1/2 left-6"
@@ -123,6 +134,7 @@ import { MatIconModule } from '@angular/material/icon';
                 <mat-icon>phone</mat-icon>
               </p>
               <input
+                formControlName="phone"
                 type="text"
                 name=""
                 id=""
@@ -143,6 +155,7 @@ import { MatIconModule } from '@angular/material/icon';
                 <mat-icon>email</mat-icon>
               </p>
               <input
+                formControlName="email"
                 type="email"
                 name=""
                 id=""
@@ -162,6 +175,7 @@ import { MatIconModule } from '@angular/material/icon';
       <div class="grid gap-2">
         <label for="" class="font-semibold">Message</label>
         <textarea
+          formControlName="message"
           name=""
           id=""
           placeholder="Enter Your Message Here"
@@ -172,12 +186,16 @@ import { MatIconModule } from '@angular/material/icon';
         <div
           class="flex text-xs text-grey-60 space-x-2 md:font-medium md:grow items-center"
         >
-          <input type="checkbox" name="" id="" />
-          <p>I agree with the Terms of Use and Privacy Policy</p>
+          <input type="checkbox" name="" id="" formControlName="tnc" />
+          <p>
+            I agree with the Terms of Use and Privacy Policy
+            <span class="text-red-600 enabled:text-purple-60">*</span>
+          </p>
         </div>
         <button
+          [disabled]="reachoutForm.invalid"
           type="submit"
-          class="bg-purple-60 px-8 py-3 rounded-md w-full md:w-fit"
+          class="bg-purple-60 px-8 py-3 rounded-md w-full md:w-fit disabled:bg-opacity-30 mt-2"
         >
           Send Your Message
         </button>
@@ -190,4 +208,22 @@ import { MatIconModule } from '@angular/material/icon';
     }
   `,
 })
-export class ReachoutFormComponent {}
+export class ReachoutFormComponent implements OnInit {
+  private fb = inject(FormBuilder);
+  reachoutForm = this.fb.group({
+    firstName: [''],
+    lastName: [''],
+    email: [''],
+    phone: [''],
+    location: [''],
+    propertyType: [''],
+    bedrooms: [''],
+    bathrooms: [''],
+    budget: [''],
+    message: [''],
+    tnc: ['', Validators.requiredTrue],
+  });
+
+  ngOnInit(): void {
+  }
+}

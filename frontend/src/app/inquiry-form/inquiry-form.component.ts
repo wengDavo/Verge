@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-inquiry-form',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, ReactiveFormsModule],
   template: `
     <form
+      [formGroup]="inquiryForm"
       action=""
       class="border dark:border-grey-15 border-white-95 dark:bg-grey-10 bg-white-90 p-5 space-y-5 rounded-[6px] "
     >
@@ -14,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">First Name</label>
           <input
+            formControlName="firstName"
             type="text"
             name=""
             id=""
@@ -24,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">Last Name</label>
           <input
+            formControlName="lastName"
             type="text"
             name=""
             id=""
@@ -36,6 +40,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">Email</label>
           <input
+            formControlName="email"
             type="email"
             name=""
             id=""
@@ -46,6 +51,7 @@ import { MatIconModule } from '@angular/material/icon';
         <div class="grid gap-2">
           <label for="" class="font-semibold">Phone</label>
           <input
+            formControlName="phone"
             type="text"
             name=""
             id=""
@@ -72,6 +78,7 @@ import { MatIconModule } from '@angular/material/icon';
       <div class="grid gap-2">
         <label for="" class="font-semibold">Message</label>
         <textarea
+          formControlName="message"
           name=""
           id=""
           placeholder="Enter Your Message Here"
@@ -82,12 +89,16 @@ import { MatIconModule } from '@angular/material/icon';
         <div
           class="flex text-xs text-grey-60 space-x-2 md:font-medium md:grow items-center"
         >
-          <input type="checkbox" name="" id="" />
-          <p>I agree with the Terms of Use and Privacy Policy</p>
+          <input type="checkbox" name="" id="" formControlName="tnc" />
+          <p>
+            I agree with the Terms of Use and Privacy Policy
+            <span class="text-red-600 enabled:text-purple-60">*</span>
+          </p>
         </div>
         <button
+          [disabled]="inquiryForm.invalid"
           type="submit"
-          class="bg-purple-60 px-8 py-3 rounded-md w-full md:w-fit"
+          class="bg-purple-60 px-8 py-3 rounded-md w-full md:w-fit disabled:bg-opacity-30"
         >
           Send Your Message
         </button>
@@ -102,4 +113,14 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class InquiryFormComponent {
   propertyName: string = 'Seaside Serenity Villa, Malibu, California';
+  fb = inject(FormBuilder);
+  inquiryForm = this.fb.group({
+    firstName: [''],
+    lastName: [''],
+    email: [''],
+    phone: [''],
+    property: [''], // disbaled on the HTML try disabling here so the value will be passed to the object using .getRawValue()
+    message: [''],
+    tnc: ['', Validators.requiredTrue],
+  });
 }
