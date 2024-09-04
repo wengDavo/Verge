@@ -1,31 +1,54 @@
 import { Routes } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
-import { AboutPageComponent } from './about-page/about-page.component';
-import { PropertiesPageComponent } from './properties-page/properties-page.component';
-import { PropertyDetailPageComponent } from './property-detail-page/property-detail-page.component';
-import { ServicesPageComponent } from './services-page/services-page.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 import { authenticationGuard } from './core/gaurds/authentication.guard';
+import { PageNotFoundComponent } from './shared/component/page-not-found/page-not-found.component';
+
 
 export const routes: Routes = [
-  { path: 'home', component: HomePageComponent, title: 'Home' },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'about', component: AboutPageComponent, title: 'About' },
+  {
+    path: 'home',
+    title: 'home',
+    loadChildren: () =>
+      import('./modules/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'about',
+    title: 'about',
+    loadChildren: () =>
+      import('./modules/about/about.module').then((m) => m.AboutModule),
+  },
   {
     path: 'properties',
-    component: PropertiesPageComponent,
-    title: 'Properties',
+    title: 'properties',
+    loadChildren: () =>
+      import('./modules/properties/properties.module').then(
+        (m) => m.PropertiesModule
+      ),
   },
-
   {
     path: 'property/:id',
-    component: PropertyDetailPageComponent,
-    title: 'Property',
-    canActivate: [authenticationGuard],
+    title: 'property',
+    loadChildren: () =>
+      import('./modules/property/property.module').then(
+        (m) => m.PropertyModule
+      ),
+      canActivate:[authenticationGuard]
   },
-  { path: 'services', component: ServicesPageComponent, title: 'Services' },
-  { path: 'contact', component: ContactPageComponent, title: 'Contact' },
+  {
+    path: 'services',
+    title: 'services',
+    loadChildren: () =>
+      import('./modules/services/services.module').then(
+        (m) => m.ServicesModule
+      ),
+  },
+  {
+    path: 'contact',
+    title: 'contact',
+    loadChildren: () =>
+      import('./modules/contact/contact.module').then(
+        (m) => m.ContactModule
+      ),
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
