@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroCardsComponent } from './hero-card.component';
+import { HeroCardsComponent } from '../hero-cards/hero-cards.component';
 
 describe('HeroCardsComponent', () => {
   let component: HeroCardsComponent;
@@ -20,4 +20,5 @@ describe('HeroCardsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

@@ -21,4 +21,6 @@ import { FooterComponent } from './footer/footer.component';
   styleUrl: './app.component.css',
   providers: [],
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'verge'
+}

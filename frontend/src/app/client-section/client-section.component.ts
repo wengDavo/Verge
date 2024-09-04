@@ -50,8 +50,8 @@ export class ClientSectionComponent implements OnInit {
           "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs.",
       },
       {
-        date: '2019',
-        companyName: 'ABC Corporation',
+        date: '2015',
+        companyName: 'Air Corporation',
         review:
           "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs.",
       },
