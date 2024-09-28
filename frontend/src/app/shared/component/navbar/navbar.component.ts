@@ -69,7 +69,7 @@ import { navBarLinkI } from './navbarlink.interface';
       <!-- but if you remove it a bug is introduced where the mobile menu is visible for a split second before it then become invisble before you toggle it -->
       <!-- @if(menu){ -->
       <div
-        class="fixed bg-white-85 dark:bg-grey-15 z-30 right-0 bottom-0 top-0 w-1/2 p-3 md:hidden"
+        class="fixed bg-white-85 dark:bg-grey-15 z-30 right-2 bottom-0 top-2 w-1/2 p-3 md:hidden h-fit rounded-lg"
         [@OpenClosed]="menu ? 'open' : 'closed'"
       >
         <button (click)="toggleMenu()" class="md:hidden absolute right-2">
