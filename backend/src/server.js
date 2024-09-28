@@ -1,19 +1,15 @@
 import express from "express";
 import morgan from "morgan";
 import path from "path";
-
-// middleware
+import { port } from "./core/config.js";
 import setCorsHeader from "./middleware/cors.js";
-
 // routes
 import propertyRoutes from "./app/property/routes.js";
 import testimonialsRouter from "./app/testimonials/routes.js";
 import faqsRouter from "./app/faqs/routes.js";
 
+// app
 const app = express();
-const port = 3000;
-
-console.log(path.join(process.cwd(), "public"));
 
 // general middleware
 app.use(express.json());
