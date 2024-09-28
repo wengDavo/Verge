@@ -7,19 +7,19 @@ export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    title: 'home',
+    title: 'Home',
     loadChildren: () =>
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'about',
-    title: 'about',
+    title: 'About',
     loadChildren: () =>
       import('./modules/about/about.module').then((m) => m.AboutModule),
   },
   {
     path: 'properties',
-    title: 'properties',
+    title: 'Properties',
     loadChildren: () =>
       import('./modules/properties/properties.module').then(
         (m) => m.PropertiesModule
@@ -27,7 +27,7 @@ export const routes: Routes = [
   },
   {
     path: 'property/:id',
-    title: 'property',
+    title: 'Property',
     loadChildren: () =>
       import('./modules/property/property.module').then(
         (m) => m.PropertyModule
@@ -36,7 +36,7 @@ export const routes: Routes = [
   },
   {
     path: 'services',
-    title: 'services',
+    title: 'Services',
     loadChildren: () =>
       import('./modules/services/services.module').then(
         (m) => m.ServicesModule
@@ -44,11 +44,11 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    title: 'contact',
+    title: 'Contact',
     loadChildren: () =>
       import('./modules/contact/contact.module').then(
         (m) => m.ContactModule
       ),
   },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent, title: 'Lost' },
 ];

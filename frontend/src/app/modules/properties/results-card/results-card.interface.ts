@@ -1,5 +1,5 @@
 export interface resultsCardI{
-    img: string
+    image_url: string
     location:string
     name: string
     description: string

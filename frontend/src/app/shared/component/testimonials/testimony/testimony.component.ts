@@ -11,13 +11,14 @@ import { testimonyI } from './testimony.interface';
       class="border border-white-85 dark:border-grey-20 p-8 gap-7 grid rounded-lg"
     >
       <div class="flex gap-1">
-        @for (item of [1, 2, 3, 4 , 5]; track $index) {
+        @for (item of [].constructor(testimony.rating); track $index) {
         <div
           class="bg-white-90 border-white-95 dark:bg-grey-10 rounded-full border dark:border-grey-30 flex items-center justify-center p-[2px]"
         >
           <mat-icon class="text-[#FFE500]">star</mat-icon>
         </div>
         }
+        <!-- @for (item of [].constructor(3); track $index) {} -->
       </div>
       <div class="grid gap-2">
         <h3 class="font-semibold">{{ testimony.title }}</h3>
@@ -30,9 +31,9 @@ import { testimonyI } from './testimony.interface';
           <mat-icon class="text-abs-white">person</mat-icon>
         </div>
         <div>
-          <p class="font-medium">{{ testimony.userName }}</p>
+          <p class="font-medium">{{ testimony.user_name }}</p>
           <p class="font-medium text-sm text-grey-60">
-            {{ testimony.userLocation }}
+            {{ testimony.user_location }}
           </p>
         </div>
       </div>

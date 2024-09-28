@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
 
@@ -9,6 +9,8 @@ import { InquirySectionComponent } from '../inquiry-section/inquiry-section.comp
 import { PricingSectionComponent } from '../pricing-section/pricing-section.component';
 // 
 import { SharedModule } from '../../../shared/shared.module';
+import { PropertyService } from '../../../shared/services/property/property.service';
+import { propertyI } from '../../../shared/services/property/property.interface';
 
 @Component({
   selector: 'app-page',
@@ -25,7 +27,7 @@ import { SharedModule } from '../../../shared/shared.module';
      <app-banner />
      <app-navbar />
     <section class="p-2 grid gap-6 md:px-8">
-      <app-property-gallery />
+      <app-property-gallery [obj]="property$"/>
       <article class="grid md:grid-cols-2 gap-2">
         <app-property-description />
         <app-property-features />
@@ -38,9 +40,19 @@ import { SharedModule } from '../../../shared/shared.module';
   `,
   styles: ``,
 })
-export class PageComponent implements OnInit {
+export class PageComponent implements OnInit{
   private router = inject(ActivatedRoute);
-  roomId$ = this.router.paramMap.pipe(map((params) => params.get('id')));
+  private propertyService = inject(PropertyService)
 
-  ngOnInit(): void {}
+  // might bring bugs
+  roomId = this.router.snapshot.paramMap.get("id")
+  property$!:propertyI
+
+  ngOnInit(): void {
+    this.propertyService.getProperty(this.roomId).subscribe((event)=>{
+      this.property$ = event
+    })
+    
+  }
+
 }

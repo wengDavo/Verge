@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
       class="border border-white-85 dark:border-grey-20 p-6 grid gap-6 rounded-xl md:mr-1"
     >
       <figure class="w-[310px] h-[210px] mx-auto">
-        <img [src]="propertyData.img" alt="" class="w-full h-full rounded-xl" />
+        <img [src]="propertyData.image_url" alt="" class="w-full h-full rounded-xl" />
       </figure>
       <article class="grid gap-6">
         <div>

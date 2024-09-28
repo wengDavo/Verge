@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroCardComponent } from '../hero-card/hero-card.component';
-import { heroCardI } from '../hero-card/hero-card.interface';
+import { HeroCardComponent } from './hero-card/hero-card.component';
+import { heroCardI } from './hero-card/hero-card.interface';
 
 @Component({
   selector: 'app-hero-cards',

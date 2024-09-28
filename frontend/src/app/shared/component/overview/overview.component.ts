@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, inject } from '@angular/core';
-import { OverviewCardComponent } from '../overview-card/overview-card.component';
-import { overviewCardI } from '../overview-card/overview-card.interface';
+import { OverviewCardComponent } from './overview-card/overview-card.component';
+import { overviewCardI } from './overview-card/overview-card.interface';
 import { APP_NAME_TOKEN } from '../../../core/services/app_name.config';
 import { MatIconModule } from '@angular/material/icon';
 

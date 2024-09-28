@@ -2,6 +2,6 @@ export interface testimonyI{
   rating: number;
   title: string;
   review: string;
-  userName: string;
-  userLocation: string;
+  user_name: string;
+  user_location: string;
 }

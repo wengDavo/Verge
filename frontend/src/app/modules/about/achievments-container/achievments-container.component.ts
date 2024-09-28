@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SectionTitleComponent } from '../../../shared/component/section-title/section-title.component';
 import { AbsractDesignSparklesComponent } from '../../../shared/component/absract-design-sparkles/absract-design-sparkles.component';
-import { AchievmentsComponent } from '../achievments/achievments.component';
+import { AchievmentsComponent } from './achievments/achievments.component';
 
 @Component({
   selector: 'app-achievments-container',

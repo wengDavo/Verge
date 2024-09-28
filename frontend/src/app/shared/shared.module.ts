@@ -7,7 +7,7 @@ import { FaqsComponent } from './component/faqs/faqs.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeroCardsComponent } from './component/hero-cards/hero-cards.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-import { OverviewCardComponent } from './component/overview-card/overview-card.component';
+import { OverviewCardComponent } from './component/overview/overview-card/overview-card.component';
 import { PaginationNavigationComponent } from './component/pagination-navigation/pagination-navigation.component';
 import { SectionTitleComponent } from './component/section-title/section-title.component';
 import { TestimonialsComponent } from './component/testimonials/testimonials.component';
@@ -30,7 +30,7 @@ import { BannerComponent } from './component/banner/banner.component';
     TestimonialsComponent,
     UnitTitleComponent,
     BgTitleComponent,
-    BannerComponent
+    BannerComponent,
   ],
   exports: [
     FaqsComponent,
@@ -43,7 +43,7 @@ import { BannerComponent } from './component/banner/banner.component';
     TestimonialsComponent,
     UnitTitleComponent,
     BgTitleComponent,
-    BannerComponent
+    BannerComponent,
   ],
 })
 export class SharedModule {}

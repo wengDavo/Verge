@@ -11,6 +11,8 @@ import { UnitTitleComponent } from '../../../shared/component/unit-title/unit-ti
 import { PaginationNavigationComponent } from '../../../shared/component/pagination-navigation/pagination-navigation.component';
 
 import { NgStyle } from '@angular/common';
+import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-featured-properties',
@@ -23,6 +25,7 @@ import { NgStyle } from '@angular/common';
     PaginationNavigationComponent,
     NgStyle,
     RouterModule,
+    AsyncPipe,
   ],
   template: `
     <section class="grid gap-4 md:px-10">
@@ -45,7 +48,7 @@ import { NgStyle } from '@angular/common';
       </article> -->
       <article class="overflow-scroll space-x-1 no-scrollbar">
         <div class="flex gap-4">
-          @for (item of propertiesData; track $index) {
+          @for (item of propertiesData$ | async; track $index) {
           <app-property [propertyData]="item" />
           }
         </div>
@@ -70,22 +73,9 @@ export class FeaturedPropertiesComponent implements OnInit {
   category: string = 'Properties';
 
   propertyService = inject(PropertyService);
-  propertiesData: Array<propertyI> = this.propertyService.getPropertiesData();
+  propertiesData$!: Observable<any>;
 
-  // curSlide: number = 1;
-  // moveSlide = (): object => {
-  //   return { transform: `translateX( -${this.curSlide * 100}%)` };
-  // };
-  // next = (e: string) => {
-  //   this.curSlide === this.propertiesData.length - 1
-  //     ? (this.curSlide = 0)
-  //     : this.curSlide++;
-  // };
-  // prev = (e: string) => {
-  //   this.curSlide === 0
-  //     ? (this.curSlide = this.propertiesData.length - 1)
-  //     : this.curSlide--;
-  // };
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.propertiesData$ = this.propertyService.getPropertiesData();
+  }
 }

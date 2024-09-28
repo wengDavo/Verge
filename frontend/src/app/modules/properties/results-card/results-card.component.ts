@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { resultsCardI } from './results-card.interface';
+import { Component, Input, OnInit, inject } from '@angular/core';
+// import { resultsCardI } from './results-card.interface';
+import { propertyI } from '../../../shared/services/property/property.interface';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
@@ -11,7 +12,7 @@ import { Router, RouterModule } from '@angular/router';
       class="border border-white-85 dark:border-grey-20 p-6 grid gap-6 rounded-xl md:mr-1  "
     >
       <figure class="h-[210px]">
-        <img [src]="data.img" alt="" class="w-full h-full rounded-xl" />
+        <img [src]="data.image_url" alt="" class="w-full h-full rounded-xl" />
       </figure>
       <article class="grid gap-6">
         <div
@@ -31,8 +32,11 @@ import { Router, RouterModule } from '@angular/router';
             <p class="font-medium text-grey-60 mb-1">Price</p>
             <p class="font-semibold text-[18px]">$ {{ data.price }}</p>
           </div>
-          <button class="text-abs-white bg-purple-60 px-5 py-[14px] rounded-lg">
-            <a routerLink="/property">View Property Details</a>
+          <button
+            class="text-abs-white bg-purple-60 px-5 py-[14px] rounded-lg"
+            (click)="redirectToProperty()"
+          >
+            View Property Details
           </button>
         </div>
       </article>
@@ -41,5 +45,10 @@ import { Router, RouterModule } from '@angular/router';
   styles: ``,
 })
 export class ResultsCardComponent {
-  @Input() data!: resultsCardI;
+  @Input() data!: propertyI;
+  private router = inject(Router);
+
+  redirectToProperty() {
+    this.router.navigate(['property', this.data.id]);
+  }
 }

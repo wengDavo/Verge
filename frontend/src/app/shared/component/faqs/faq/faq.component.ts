@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { faqI } from './faq.interface';
 @Component({
   selector: 'app-faq',
@@ -23,6 +23,6 @@ import { faqI } from './faq.interface';
   `,
   styles: ``,
 })
-export class FaqComponent {
+export class FaqComponent{
   @Input() faq!: faqI;
 }
